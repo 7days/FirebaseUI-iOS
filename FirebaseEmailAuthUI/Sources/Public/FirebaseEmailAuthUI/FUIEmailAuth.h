@@ -43,7 +43,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSBundle *)bundle;
 
-/** @fn initAuthAuthUI:signInMethod:forceSameDevice:allowNewEmailAccounts:actionCodeSetting:
+/** @fn initWithAuthUI:signInMethod:forceSameDevice:allowNewEmailAccounts:actionCodeSettings:
     @brief Initializer with several configurations.
     @param authUI The auth UI object that this auth UI provider associate with.
     @param signInMethod The email sign in method, which can be password or email link.
@@ -51,13 +51,13 @@ NS_ASSUME_NONNULL_BEGIN
     @param allowNewEmailAccounts Indicate whether allow sign up if the user doesn't exist.
     @param actionCodeSettings The action code settings for email actions.
  */
-- (instancetype)initAuthAuthUI:(FUIAuth *)authUI
+- (instancetype)initWithAuthUI:(FUIAuth *)authUI
                   signInMethod:(NSString *)signInMethod
                forceSameDevice:(BOOL)forceSameDevice
          allowNewEmailAccounts:(BOOL)allowNewEmailAccounts
-             actionCodeSetting:(FIRActionCodeSettings *)actionCodeSettings;
+             actionCodeSettings:(FIRActionCodeSettings *)actionCodeSettings;
 
-/** @fn initAuthAuthUI:signInMethod:forceSameDevice:allowNewEmailAccounts:requireDisplayName:actionCodeSetting:
+/** @fn initWithAuthUI:signInMethod:forceSameDevice:allowNewEmailAccounts:requireDisplayName:actionCodeSettings:
     @brief Initializer with several configurations.
     @param authUI The auth UI object that this auth UI provider associate with.
     @param signInMethod The email sign in method, which can be password or email link.
@@ -66,12 +66,12 @@ NS_ASSUME_NONNULL_BEGIN
     @param requireDisplayName Indicate whether require display name when sign up.
     @param actionCodeSettings The action code settings for email actions.
  */
-- (instancetype)initAuthAuthUI:(FUIAuth *)authUI
+- (instancetype)initWithAuthUI:(FUIAuth *)authUI
                   signInMethod:(NSString *)signInMethod
                forceSameDevice:(BOOL)forceSameDevice
          allowNewEmailAccounts:(BOOL)allowNewEmailAccounts
             requireDisplayName:(BOOL)requireDisplayName
-             actionCodeSetting:(FIRActionCodeSettings *)actionCodeSettings;
+             actionCodeSettings:(FIRActionCodeSettings *)actionCodeSettings;
 
 /** @property signInMethod.
     @brief Defines the sign in method for FIREmailAuthProvider.

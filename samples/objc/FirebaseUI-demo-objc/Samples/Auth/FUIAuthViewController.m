@@ -401,19 +401,19 @@ static NSString *const kFirebasePrivacyPolicy = @"https://firebase.google.com/su
                                 installIfNotAvailable:NO
                                        minimumVersion:@"12"];
 
-            provider = [[FUIEmailAuth alloc] initAuthAuthUI:[FUIAuth defaultAuthUI]
+            provider = [[FUIEmailAuth alloc] initWithAuthUI:[FUIAuth defaultAuthUI]
                                                signInMethod:FIREmailLinkAuthSignInMethod
                                             forceSameDevice:NO
                                       allowNewEmailAccounts:YES
                                          requireDisplayName:YES
-                                          actionCodeSetting:actionCodeSettings];
+                                          actionCodeSettings:actionCodeSettings];
           } else {
-            provider = [[FUIEmailAuth alloc] initAuthAuthUI:[FUIAuth defaultAuthUI]
+            provider = [[FUIEmailAuth alloc] initWithAuthUI:[FUIAuth defaultAuthUI]
                                                signInMethod:FIREmailPasswordAuthSignInMethod
                                             forceSameDevice:NO
                                       allowNewEmailAccounts:YES
                                          requireDisplayName:NO
-                                          actionCodeSetting:[[FIRActionCodeSettings alloc] init]];
+                                          actionCodeSettings:[[FIRActionCodeSettings alloc] init]];
           }
           break;
         case kIDPGoogle:

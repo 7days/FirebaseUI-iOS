@@ -76,34 +76,34 @@ static NSString *const kEmailLinkSignInLinkingCredentialKey = @"FIRAuthEmailLink
 }
 
 - (instancetype)init {
-  return [self initAuthAuthUI:[FUIAuth defaultAuthUI]
+  return [self initWithAuthUI:[FUIAuth defaultAuthUI]
                  signInMethod:@"password"
               forceSameDevice:NO
         allowNewEmailAccounts:YES
            requireDisplayName:YES
-            actionCodeSetting:[[FIRActionCodeSettings alloc] init]];
+            actionCodeSettings:[[FIRActionCodeSettings alloc] init]];
 }
 
 
-- (instancetype)initAuthAuthUI:(FUIAuth *)authUI
+- (instancetype)initWithAuthUI:(FUIAuth *)authUI
                   signInMethod:(NSString *)signInMethod
                forceSameDevice:(BOOL)forceSameDevice
          allowNewEmailAccounts:(BOOL)allowNewEmailAccounts
-             actionCodeSetting:(FIRActionCodeSettings *)actionCodeSettings {
-  return [self initAuthAuthUI:authUI
+             actionCodeSettings:(FIRActionCodeSettings *)actionCodeSettings {
+  return [self initWithAuthUI:authUI
                  signInMethod:signInMethod
               forceSameDevice:forceSameDevice
         allowNewEmailAccounts:allowNewEmailAccounts
            requireDisplayName:YES
-            actionCodeSetting:actionCodeSettings];
+            actionCodeSettings:actionCodeSettings];
 }
 
-- (instancetype)initAuthAuthUI:(FUIAuth *)authUI
+- (instancetype)initWithAuthUI:(FUIAuth *)authUI
                   signInMethod:(NSString *)signInMethod
                forceSameDevice:(BOOL)forceSameDevice
          allowNewEmailAccounts:(BOOL)allowNewEmailAccounts
             requireDisplayName:(BOOL)requireDisplayName
-             actionCodeSetting:(FIRActionCodeSettings *)actionCodeSettings {
+             actionCodeSettings:(FIRActionCodeSettings *)actionCodeSettings {
   self = [super init];
   if (self) {
     _authUI = authUI;
