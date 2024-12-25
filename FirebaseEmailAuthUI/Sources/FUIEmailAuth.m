@@ -75,6 +75,20 @@ static NSString *const kEmailLinkSignInLinkingCredentialKey = @"FIRAuthEmailLink
                  inFrameworkBundle:[NSBundle bundleForClass:[self class]]];
 }
 
++ (instancetype)emailAuthWithAuthUI:(FUIAuth *)authUI
+             signInMethod:(NSString *)signInMethod
+          forceSameDevice:(BOOL)forceSameDevice
+    allowNewEmailAccounts:(BOOL)allowNewEmailAccounts
+       requireDisplayName:(BOOL)requireDisplayName
+       actionCodeSettings:(FIRActionCodeSettings *)actionCodeSettings {
+  return [[FUIEmailAuth alloc] initWithAuthUI:authUI
+                 signInMethod:signInMethod
+              forceSameDevice:forceSameDevice
+        allowNewEmailAccounts:allowNewEmailAccounts
+           requireDisplayName:requireDisplayName
+           actionCodeSettings:actionCodeSettings];
+}
+
 - (instancetype)init {
   return [self initWithAuthUI:[FUIAuth defaultAuthUI]
                  signInMethod:@"password"

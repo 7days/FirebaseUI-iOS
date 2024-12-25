@@ -41,7 +41,17 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property(nonatomic, readwrite) FUIButtonAlignment buttonAlignment;
 
+/** @fn bundle
+    @brief Returns the resource bundle required by this class.
+ */
 + (NSBundle *)bundle;
+
++ (instancetype)emailAuthWithAuthUI:(FUIAuth *)authUI
+                       signInMethod:(NSString *)signInMethod
+                    forceSameDevice:(BOOL)forceSameDevice
+              allowNewEmailAccounts:(BOOL)allowNewEmailAccounts
+                 requireDisplayName:(BOOL)requireDisplayName
+                 actionCodeSettings:(FIRActionCodeSettings *)actionCodeSettings;
 
 /** @fn initWithAuthUI:signInMethod:forceSameDevice:allowNewEmailAccounts:actionCodeSettings:
     @brief Initializer with several configurations.
